@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -15,9 +16,47 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
         integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-
     <title>Page Admin</title>
 </head>
+
+<script>
+    jQuery(function ($) {
+
+        $(".sidebar-dropdown > a").click(function () {
+            $(".sidebar-submenu").slideUp(200);
+            if (
+                $(this)
+                    .parent()
+                    .hasClass("active")
+            ) {
+                $(".sidebar-dropdown").removeClass("active");
+                $(this)
+                    .parent()
+                    .removeClass("active");
+            } else {
+                $(".sidebar-dropdown").removeClass("active");
+                $(this)
+                    .next(".sidebar-submenu")
+                    .slideDown(200);
+                $(this)
+                    .parent()
+                    .addClass("active");
+            }
+        });
+
+        $("#close-sidebar").click(function () {
+            $(".page-wrapper").removeClass("toggled");
+        });
+        $("#show-sidebar").click(function () {
+            $(".page-wrapper").addClass("toggled");
+        });
+    });
+    function change(iconID) {
+        if (document.getElementById(iconID).className == "fa fa-fw fa-angle-down") {
+            document.getElementById(iconID).className = "fa fa-fw fa-chevron-up";
+        }
+    }
+</script>
 
 <body style="background-color: whitesmoke;">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
@@ -54,22 +93,101 @@
 
     <hr class="shadowhr">
 
-    <nav class="navbar navbar-light larg" style="background-color: white;">
-        <ul class="navbar-nav mr-auto">
+    <!--Sidebar-->
+
+    <div class="navbar navbar-light sidenav">
+        <ul class="navbar-nav mr-auto ml-4">
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-fw fa-home"></i></i> <b>Dashboard</b></a>
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-home"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item sidebar-dropdown">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-users"></i>
+                    <span>Cadastros</span>
+                    <i class="fa fa-angle-down ml-4" change('fa fa-fw fa-angle-down')></i>
+                </a>
+                <div class="sidebar-submenu">
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="#">Usuários
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Clientes</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item sidebar-dropdown">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-folder-open"></i>
+                    <span>Projetos</span>
+                    <i class="fa fa-angle-down ml-4"></i>
+                </a>
+                <div class="sidebar-submenu">
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="#">Criar projeto
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Relatórios</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Registros</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+
+            <li class="nav-item sidebar-dropdown">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-user-circle"></i>
+                    <span>Minha conta</span>
+                    <i class="fa fa-angle-down ml-4"></i>
+                </a>
+                <div class="sidebar-submenu">
+                    <ul>
+                        <li>
+                            <a class="nav-link" href="#">Trocar senha
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Editar perfil</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-clock" aria-hidden="true"></i>
+                    <span>Ver registro de horas</span>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">
+                    <i class="fa fa-fw fa-wrench"></i>
+                    <span>Configurações</span>
+                </a>
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="../index.html">
+                    <i class="fa fa-fw fa-times-circle"></i>
+                    <span>Sair</span>
+                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
+
         </ul>
-    </nav>
+    </div>
+
 
     <!-- Modal createProject -->
     <div class="modal fade" id="createProject" tabindex="-1" role="dialog" aria-labelledby="modalCenterProject"
