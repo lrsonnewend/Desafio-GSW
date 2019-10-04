@@ -33,3 +33,16 @@
     width: 20%;
 }
 
+.searchrounded{
+    width: 70%;
+    border-radius: 20px;
+    border: 1px rgb(151, 147, 147) solid;
+    padding: 5px 6px;
+    top: 0;
+}
+
+.noborder{
+    border: none;
+    background-color: white;
+}
+

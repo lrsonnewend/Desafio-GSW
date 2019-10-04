@@ -60,27 +60,32 @@
 
 <body style="background-color: whitesmoke;">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <!-- <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active mr-4 ml-5">
+                <li class="nav-item mr-4">
+                    <input class="searchrounded" type="search" placeholder="Buscar..."
+                        aria-label="Buscar">
+                    <button type="button" class="noborder"><i class="fas fa-fw fa-search"></i></button>
+                </li>
+                <!-- <li class="nav-item active mr-4 ml-5">
                     <div class="input-icons">
                         <i class="fas fa-fw fa-search"></i>
                         <input type="text" name="search" placeholder="Buscar...">
                     </div>
-                </li>
-                <li class="nav-item mr-4">
+                </li> -->
+                <li class="nav-item mr-5">
                     <a class="nav-link" href="#createProject" data-toggle="modal" data-target="#createProject">
                         <i class="fas fa-fw fa-plus"></i>Criar projeto
                     </a>
                 </li>
 
-                <li class="nav-item mr-4">
+                <li class="nav-item mr-5">
                     <a class="nav-link" href="#"><i class="fas fa-fw fa-user-plus"></i></i> Cadastrar usuário</a>
                 </li>
 
@@ -97,9 +102,9 @@
 
     <div class="navbar navbar-light sidenav">
         <img src="../imagens/userBach.jpg" class="rounded-circle ajustpic">
-            <small class="paragraph"><b>Dashboard Admin</b></small>
-            <br>
-            <small class="paragraph2">Paulo Correia</small>
+        <small class="paragraph"><b>Dashboard Admin</b></small>
+        <br>
+        <small class="paragraph2">Paulo Correia</small>
     </div>
     <div class="navbar navbar-light sidenav2">
         <ul class="navbar-nav mr-auto ml-2 mt-2">
