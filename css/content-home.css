@@ -1,18 +1,27 @@
-.page-wrapper .page-content {
-    display: inline-block;
-    width: 100%;
-    padding-left: 10px;
-    padding-top: 20px;
-}
-  
-.page-wrapper .page-content > div {
-    padding: 10px 10px;
-}
-  
-.page-wrapper .page-content {
-    overflow-x: hidden;
+.conteudo{
+    margin-left: 22%;
+    margin-top: -48%;
 }
 
-.page-wrapper.toggled .page-content {
-    padding-left:500px;
+.margin-card{
+    margin-right: 30px;
+}
+
+.margin-card-body{
+    margin-top: -45px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.line-card{
+    color: rgb(17, 16, 16);
+    width: 27%;
+    height: 50px;
+    margin-top: 0;
+    margin: 0px auto 10px;
+    margin-left: 18px;
+}
+
+.fa-sort-down{
+    margin-left: -7px;
 }

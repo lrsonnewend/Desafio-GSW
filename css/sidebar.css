@@ -31,7 +31,7 @@
 .paragraph{
   color: red;
   margin-top: 3px;
-  margin-left: -33px;
+  margin-left: -13px;
   
 }
 
@@ -40,7 +40,7 @@
   margin-left: 69px;
 }
 
-lineDiv{
+.lineDiv{
   border:none;
     height: 20px;
     width: 100%;
